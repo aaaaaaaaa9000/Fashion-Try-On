@@ -1,29 +1,35 @@
 {
-  "name": "copy-of--تلبيس",
+  "name": "fashion-try-on",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "tsx server.ts",
+    "build": "vite build && esbuild server.ts --bundle --platform=node --format=cjs --packages=external --outfile=dist/server.cjs",
+    "lint": "tsc --noEmit",
+    "start": "NODE_ENV=production node dist/server.cjs"
   },
   "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "@google/genai": "^1.10.0",
-    "react-image-crop": "^11.0.6",
-    "framer-motion": "^11.2.12",
-    "clsx": "^2.1.1",
-    "tailwind-merge": "^2.4.0",
-    "@tsparticles/react": "^3.0.0",
-    "@tsparticles/engine": "^3.5.0",
-    "@tsparticles/slim": "^3.5.0"
+    "@google/genai": "^2.32.0",
+    "express": "^5.3.0"
   },
   "devDependencies": {
+    "@types/express": "^5.0.6",
     "@types/node": "^22.14.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
     "@vitejs/plugin-react": "^5.0.0",
+    "autoprefixer": "^10.7.0",
+    "esbuild": "^0.28.2",
+    "postcss": "^8.5.33",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tailwindcss": "^3.4.19",
+    "tsx": "^4.23.15",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }
